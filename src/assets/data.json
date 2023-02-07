@@ -1,0 +1,1250 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "\u0027Merkintä tapaamisesta tai yhteydenotosta\u0027 JSON schema",
+  "type": "object",
+  "additionalProperties": false,
+  "sosmeta": {
+    "title": "\u0027Merkintä tapaamisesta tai yhteydenotosta\u0027 JSON schema",
+    "status": "Valmis",
+    "documentDefinitionVersion": "2019-11-22",
+    "dataComponentLibraryVersion": "2019-11-22",
+    "oid": "1.2.246.537.6.1506.19005.2019.11.22",
+    "documentType": "Asiakaskertomusmerkintä",
+    "documentAuthor": "Ammattihenkilö",
+    "documentSubject": "Sosiaalihuollon    palvelutehtäville yhteiset asiakasasiakirjat",
+    "changeNote": []
+  },
+  "required": ["merkinta_tapaamisesta_tai_yhteydenotosta"],
+  "properties": {
+    "merkinta_tapaamisesta_tai_yhteydenotosta": {
+      "type": "object",
+      "additionalProperties": false,
+      "sosmeta": {
+        "name": [
+          {
+            "lang": "fi",
+            "value": "Merkintä tapaamisesta tai yhteydenotosta"
+          },
+          {
+            "lang": "sv",
+            "value": "Anteckning om möte eller kontakt"
+          }
+        ],
+        "description": [
+          {
+            "lang": "fi",
+            "value": "asiakaskertomusmerkintä siitä, että palvelunantaja on ollut vuorovaikutuksessa sosiaalihuollon asiakkaan kanssa tai häneen tai hänen sosiaalihuollon asiaansa liittyvän henkilön kanssa\nTapaaminen tai yhteydenotto on voinut tapahtua joko kasvokkain, puhelimitse tai sähköisillä viestimillä."
+          },
+          {
+            "lang": "sv",
+            "value": "anteckning i en klientjournal om att en tillhandahållare av tjänster har växelverkat med en klient inom socialvården eller med en person med anknytning till klienten eller klientens socialvårdsärende\nMötet eller kontakten har kunnat ske antingen öga mot öga, per telefon eller elektroniskt."
+          }
+        ]
+      },
+      "required": ["asiakas", "asiakaskertomusmerkinta", "laatija"],
+      "properties": {
+        "asiakas": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "sosmeta": {
+              "name": [
+                {
+                  "lang": "fi",
+                  "value": "Asiakas"
+                },
+                {
+                  "lang": "sv",
+                  "value": "Klient"
+                }
+              ],
+              "description": [
+                {
+                  "lang": "fi",
+                  "value": "Asiakkaana on henkilö, jonka asiaa yhteydenotto tai tapaaminen koski."
+                },
+                {
+                  "lang": "sv",
+                  "value": "Klienten är den person, vars ärende kontakten och mötet gällde."
+                }
+              ],
+              "repeatable": true,
+              "required": true
+            },
+            "required": ["sukunimi", "etunimet"],
+            "properties": {
+              "sukunimi": {
+                "type": "string",
+                "minLength": 1,
+                "sosmeta": {
+                  "name": [
+                    {
+                      "lang": "fi",
+                      "value": "Sukunimi"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Efternamn"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "lang": "fi",
+                      "value": "-"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "-"
+                    }
+                  ],
+                  "example": [
+                    {
+                      "lang": "fi",
+                      "value": "Virtanen"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Johansson"
+                    }
+                  ],
+                  "repeatable": false,
+                  "required": true,
+                  "representation": [
+                    {
+                      "lang": "fi",
+                      "value": "Nimi"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Namn"
+                    }
+                  ]
+                }
+              },
+              "etunimet": {
+                "type": "string",
+                "minLength": 1,
+                "sosmeta": {
+                  "name": [
+                    {
+                      "lang": "fi",
+                      "value": "Etunimet"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Samtliga förnamn"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "lang": "fi",
+                      "value": "-"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "-"
+                    }
+                  ],
+                  "example": [
+                    {
+                      "lang": "fi",
+                      "value": "Matti Tapio"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Sven Erik"
+                    }
+                  ],
+                  "repeatable": false,
+                  "required": true,
+                  "representation": [
+                    {
+                      "lang": "fi",
+                      "value": "Nimi"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Namn"
+                    }
+                  ]
+                }
+              },
+              "henkilotunnus": {
+                "type": "object",
+                "additionalProperties": false,
+                "sosmeta": {
+                  "name": [
+                    {
+                      "lang": "fi",
+                      "value": "Henkilötunnus"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Personbeteckning"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "lang": "fi",
+                      "value": "-"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "-"
+                    }
+                  ],
+                  "example": [
+                    {
+                      "lang": "fi",
+                      "value": "123456-789A"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "123456-789A"
+                    }
+                  ],
+                  "repeatable": false,
+                  "required": false,
+                  "representation": [
+                    {
+                      "lang": "fi",
+                      "value": "Tunnus"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Identifierare"
+                    }
+                  ],
+                  "systemUri": [
+                    {
+                      "lang": "",
+                      "value": "urn:oid:1.2.246.21"
+                    }
+                  ]
+                },
+                "required": ["value"],
+                "properties": {
+                  "system": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              },
+              "tilapainen_yksilointitunnus": {
+                "type": "object",
+                "additionalProperties": false,
+                "sosmeta": {
+                  "name": [
+                    {
+                      "lang": "fi",
+                      "value": "Tilapäinen yksilöintitunnus"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Temporär identifikationskod"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "lang": "fi",
+                      "value": "Kenttään kirjataan henkilön tilapäiseen yksilöintiin annettu tunnus."
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "I fältet antecknas identifikationskoden som getts personen för tillfällig identifiering."
+                    }
+                  ],
+                  "example": [
+                    {
+                      "lang": "fi",
+                      "value": "112233-445a"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "112233-445a"
+                    }
+                  ],
+                  "repeatable": false,
+                  "required": false,
+                  "representation": [
+                    {
+                      "lang": "fi",
+                      "value": "Tunnus"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Identifierare"
+                    }
+                  ]
+                },
+                "required": ["value"],
+                "properties": {
+                  "system": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "asiakaskertomusmerkinta": {
+          "type": "object",
+          "additionalProperties": false,
+          "sosmeta": {
+            "name": [
+              {
+                "lang": "fi",
+                "value": "Asiakaskertomusmerkintä"
+              },
+              {
+                "lang": "sv",
+                "value": "Anteckning i en klientjournal"
+              }
+            ],
+            "title": [
+              {
+                "lang": "fi",
+                "value": "Ei otsikkoa"
+              },
+              {
+                "lang": "sv",
+                "value": "Ingen rubrik"
+              }
+            ],
+            "description": [
+              {
+                "lang": "fi",
+                "value": "-"
+              },
+              {
+                "lang": "sv",
+                "value": "-"
+              }
+            ],
+            "repeatable": false,
+            "required": true
+          },
+          "required": ["palvelutehtava"],
+          "properties": {
+            "palvelutehtava": {
+              "type": "object",
+              "additionalProperties": false,
+              "sosmeta": {
+                "name": [
+                  {
+                    "lang": "fi",
+                    "value": "Palvelutehtävä"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Serviceuppgift"
+                  }
+                ],
+                "description": [
+                  {
+                    "lang": "fi",
+                    "value": "Kenttään kirjataan luokituksen avulla palvelutehtävä, johon asiakaskertomusmerkintä kuuluu."
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "I fältet antecknas serviceuppgiften, till vilken anteckningen i klientjournalen hänför sig."
+                  }
+                ],
+                "classification": [
+                  {
+                    "lang": "fi",
+                    "value": "Koodistopalvelin: Sosiaalihuolto - Palvelutehtävä 1.2.246.537.6.1221 https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d704\u0026versionKey\u003d2563"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Kodtjänsten: Socialvård - Serviceuppgift 1.2.246.537.6.1221 https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d704\u0026versionKey\u003d2563"
+                  }
+                ],
+                "classificationLink": [
+                  {
+                    "lang": "",
+                    "value": "https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d704\u0026versionKey\u003d2563"
+                  }
+                ],
+                "classificationOid": [
+                  {
+                    "lang": "",
+                    "value": "1.2.246.537.6.1221"
+                  }
+                ],
+                "repeatable": false,
+                "required": true,
+                "representation": [
+                  {
+                    "lang": "fi",
+                    "value": "Koodi"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Kod"
+                  }
+                ]
+              },
+              "required": ["system", "code", "display"],
+              "properties": {
+                "system": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "display": {
+                  "type": "string"
+                }
+              }
+            },
+            "sosiaalipalvelu": {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "sosmeta": {
+                  "name": [
+                    {
+                      "lang": "fi",
+                      "value": "Sosiaalipalvelu"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Socialservice"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "lang": "fi",
+                      "value": "Kenttään kirjataan luokituksen avulla sosiaalipalvelu, jonka antamiseen asiakaskertomusmerkintä liittyy."
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "I fältet antecknas socialservicen, till vilken anteckningen i klientjournalen hänför sig."
+                    }
+                  ],
+                  "classification": [
+                    {
+                      "lang": "fi",
+                      "value": "Koodistopalvelin: Sosiaalihuolto - Sosiaalipalvelut 1.2.246.537.6.1222 https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d703\u0026versionKey\u003d2683"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Kodtjänsten: Socialvård - Socialservice 1.2.246.537.6.1222    https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d703\u0026versionKey\u003d2683"
+                    }
+                  ],
+                  "classificationLink": [
+                    {
+                      "lang": "",
+                      "value": "https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d703\u0026versionKey\u003d2683"
+                    }
+                  ],
+                  "classificationOid": [
+                    {
+                      "lang": "",
+                      "value": "1.2.246.537.6.1222"
+                    }
+                  ],
+                  "repeatable": true,
+                  "required": false,
+                  "representation": [
+                    {
+                      "lang": "fi",
+                      "value": "Koodi"
+                    },
+                    {
+                      "lang": "sv",
+                      "value": "Kod"
+                    }
+                  ]
+                },
+                "required": ["system", "code", "display"],
+                "properties": {
+                  "system": {
+                    "type": "string"
+                  },
+                  "code": {
+                    "type": "string"
+                  },
+                  "display": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "tapahtuma": {
+              "type": "object",
+              "additionalProperties": false,
+              "sosmeta": {
+                "name": [
+                  {
+                    "lang": "fi",
+                    "value": "Tapahtuma"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Händelse"
+                  }
+                ],
+                "title": [
+                  {
+                    "lang": "fi",
+                    "value": "Ei otsikkoa"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Ingen rubrik"
+                  }
+                ],
+                "description": [
+                  {
+                    "lang": "fi",
+                    "value": "-"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "-"
+                  }
+                ],
+                "repeatable": false,
+                "required": false
+              },
+              "required": [],
+              "properties": {
+                "ajanjakso": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "sosmeta": {
+                    "name": [
+                      {
+                        "lang": "fi",
+                        "value": "Ajanjakso"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Tidsperiod"
+                      }
+                    ],
+                    "title": [
+                      {
+                        "lang": "fi",
+                        "value": "Tapaamisen tai yhteydenoton ajankohta"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Tidpunkt för mötet eller kontakten"
+                      }
+                    ],
+                    "description": [
+                      {
+                        "lang": "fi",
+                        "value": "-"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "-"
+                      }
+                    ],
+                    "example": [
+                      {
+                        "lang": "fi",
+                        "value": "5.5.2010"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "5.5.2010"
+                      }
+                    ],
+                    "implementationNote": [
+                      {
+                        "lang": "fi",
+                        "value": "Tämä ei ole toistuva TK Tapahtuman määrityksestä poiketen."
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Detta är inte återkommande till skillnad från specifikation av DK Händelse."
+                      }
+                    ],
+                    "repeatable": false,
+                    "required": false
+                  },
+                  "required": [],
+                  "properties": {
+                    "alkamishetki": {
+                      "type": "string",
+                      "pattern": "^-?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$",
+                      "sosmeta": {
+                        "name": [
+                          {
+                            "lang": "fi",
+                            "value": "Alkamishetki"
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "Inledningstidpunkt"
+                          }
+                        ],
+                        "description": [
+                          {
+                            "lang": "fi",
+                            "value": "Kenttään kirjataan ajanjakson aloittava päivämäärä ja kellonaika."
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "I fältet antecknas datumet och klockslaget som inleder tidsperioden."
+                          }
+                        ],
+                        "example": [
+                          {
+                            "lang": "fi",
+                            "value": "2010-10-13T10:49:14+03:00"
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "2010-10-13T10:49:14+03:00"
+                          }
+                        ],
+                        "repeatable": false,
+                        "required": false,
+                        "representation": [
+                          {
+                            "lang": "fi",
+                            "value": "Hetki"
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "Datum och klockslag"
+                          }
+                        ]
+                      }
+                    },
+                    "paattymishetki": {
+                      "type": "string",
+                      "pattern": "^-?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$",
+                      "sosmeta": {
+                        "name": [
+                          {
+                            "lang": "fi",
+                            "value": "Päättymishetki"
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "Avslutningstidpunkt"
+                          }
+                        ],
+                        "description": [
+                          {
+                            "lang": "fi",
+                            "value": "Kenttään kirjataan ajanjakson päättävä päivämäärä ja kellonaika."
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "I fältet antecknas datumet och klockslaget som avslutar tidsperioden."
+                          }
+                        ],
+                        "example": [
+                          {
+                            "lang": "fi",
+                            "value": "2010-10-13T10:49:14+03:00"
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "2010-10-13T10:49:14+03:00"
+                          }
+                        ],
+                        "repeatable": false,
+                        "required": false,
+                        "representation": [
+                          {
+                            "lang": "fi",
+                            "value": "Hetki"
+                          },
+                          {
+                            "lang": "sv",
+                            "value": "Datum och klockslag"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "asiointitapa": {
+                  "type": "array",
+                  "minItems": 0,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "sosmeta": {
+                      "name": [
+                        {
+                          "lang": "fi",
+                          "value": "Asiointitapa"
+                        },
+                        {
+                          "lang": "sv",
+                          "value": "Kontaktsätt"
+                        }
+                      ],
+                      "title": [
+                        {
+                          "lang": "fi",
+                          "value": "Tapaamisen tai yhteydenoton tapa"
+                        },
+                        {
+                          "lang": "sv",
+                          "value": "Metod för mötet eller kontakten"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "lang": "fi",
+                          "value": "Kenttään kirjataan luokituksen avulla asiointitapa."
+                        },
+                        {
+                          "lang": "sv",
+                          "value": "I fältet antecknas typen av kontakt med hjälp av klassificeringen."
+                        }
+                      ],
+                      "example": [
+                        {
+                          "lang": "fi",
+                          "value": "Kotikäynti"
+                        },
+                        {
+                          "lang": "sv",
+                          "value": "Hembesök"
+                        }
+                      ],
+                      "classification": [
+                        {
+                          "lang": "fi",
+                          "value": "Koodistopalvelin: Sosiaalihuolto - Asiointitapa 1.2.246.537.6.1250 https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d1803\u0026versionKey\u003d2043"
+                        },
+                        {
+                          "lang": "sv",
+                          "value": "Kodtjänsten: Socialvård - Typ av kontakt med klienten 1.2.246.537.6.1250 http://91.202.112.142/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d1803\u0026versionKey\u003d2043"
+                        }
+                      ],
+                      "classificationLink": [
+                        {
+                          "lang": "",
+                          "value": "https://koodistopalvelu.kanta.fi/codeserver/pages/classification-view-page.xhtml?classificationKey\u003d1803\u0026versionKey\u003d2043"
+                        }
+                      ],
+                      "classificationOid": [
+                        {
+                          "lang": "",
+                          "value": "1.2.246.537.6.1250"
+                        }
+                      ],
+                      "repeatable": true,
+                      "required": false,
+                      "representation": [
+                        {
+                          "lang": "fi",
+                          "value": "Koodi"
+                        },
+                        {
+                          "lang": "sv",
+                          "value": "Kod"
+                        }
+                      ]
+                    },
+                    "required": ["system", "code", "display"],
+                    "properties": {
+                      "system": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "display": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "paikka": {
+                  "type": "string",
+                  "sosmeta": {
+                    "name": [
+                      {
+                        "lang": "fi",
+                        "value": "Paikka"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Ort"
+                      }
+                    ],
+                    "title": [
+                      {
+                        "lang": "fi",
+                        "value": "Tapaamispaikka"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Mötesplats"
+                      }
+                    ],
+                    "description": [
+                      {
+                        "lang": "fi",
+                        "value": "Kenttään kirjataan tapahtumapaikka."
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "I fältet antecknas platsen för händelsen."
+                      }
+                    ],
+                    "example": [
+                      {
+                        "lang": "fi",
+                        "value": "Asiakkaan koti."
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Klientens hem."
+                      }
+                    ],
+                    "repeatable": false,
+                    "required": false,
+                    "representation": [
+                      {
+                        "lang": "fi",
+                        "value": "Teksti"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Text"
+                      }
+                    ]
+                  }
+                },
+                "osallistujat": {
+                  "type": "string",
+                  "sosmeta": {
+                    "name": [
+                      {
+                        "lang": "fi",
+                        "value": "Osallistujat"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Deltagare"
+                      }
+                    ],
+                    "title": [
+                      {
+                        "lang": "fi",
+                        "value": "Tapaamiseen osallistuneet henkilöt"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Personer som deltog i mötet"
+                      }
+                    ],
+                    "description": [
+                      {
+                        "lang": "fi",
+                        "value": "Kenttään kirjataan tapaamiseen osallistuneiden henkilöiden nimet ja roolit. Jos osallistuja on ammattihenkilö, kirjataan myös tehtävänimike ja organisaatio."
+                      }
+                    ],
+                    "repeatable": false,
+                    "required": false,
+                    "representation": [
+                      {
+                        "lang": "fi",
+                        "value": "Teksti"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Text"
+                      }
+                    ]
+                  }
+                },
+                "kuvaus": {
+                  "type": "string",
+                  "sosmeta": {
+                    "name": [
+                      {
+                        "lang": "fi",
+                        "value": "Kuvaus"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Beskrivning"
+                      }
+                    ],
+                    "title": [
+                      {
+                        "lang": "fi",
+                        "value": "Tapaamisen tai yhteydenoton kuvaus"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Beskrivning av mötet eller kontakten"
+                      }
+                    ],
+                    "description": [
+                      {
+                        "lang": "fi",
+                        "value": "-"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "-"
+                      }
+                    ],
+                    "repeatable": false,
+                    "required": false,
+                    "representation": [
+                      {
+                        "lang": "fi",
+                        "value": "Teksti"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Text"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sovitut_asiat": {
+          "type": "string",
+          "sosmeta": {
+            "name": [
+              {
+                "lang": "fi",
+                "value": "Sovitut asiat"
+              },
+              {
+                "lang": "sv",
+                "value": "Överenskomna frågor"
+              }
+            ],
+            "repeatable": false,
+            "required": false,
+            "representation": [
+              {
+                "lang": "fi",
+                "value": "Teksti"
+              },
+              {
+                "lang": "sv",
+                "value": "Text"
+              }
+            ]
+          }
+        },
+        "laatija": {
+          "type": "object",
+          "additionalProperties": false,
+          "sosmeta": {
+            "name": [
+              {
+                "lang": "fi",
+                "value": "Laatija"
+              },
+              {
+                "lang": "sv",
+                "value": "Upprättare"
+              }
+            ],
+            "description": [
+              {
+                "lang": "fi",
+                "value": "Laatija on asiakaskertomusmerkinnän laatinut ammattihenkilö."
+              },
+              {
+                "lang": "sv",
+                "value": "Upprättare är den yrkesutbildade person som har upprättat anteckningen i klientjournalen."
+              }
+            ],
+            "repeatable": false,
+            "required": true
+          },
+          "required": ["sukunimi", "etunimet"],
+          "properties": {
+            "sukunimi": {
+              "type": "string",
+              "minLength": 1,
+              "sosmeta": {
+                "name": [
+                  {
+                    "lang": "fi",
+                    "value": "Sukunimi"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Efternamn"
+                  }
+                ],
+                "description": [
+                  {
+                    "lang": "fi",
+                    "value": "-"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "-"
+                  }
+                ],
+                "repeatable": false,
+                "required": true,
+                "representation": [
+                  {
+                    "lang": "fi",
+                    "value": "Nimi"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Namn"
+                  }
+                ]
+              }
+            },
+            "etunimet": {
+              "type": "string",
+              "minLength": 1,
+              "sosmeta": {
+                "name": [
+                  {
+                    "lang": "fi",
+                    "value": "Etunimet"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Samtliga förnamn"
+                  }
+                ],
+                "description": [
+                  {
+                    "lang": "fi",
+                    "value": "-"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "-"
+                  }
+                ],
+                "repeatable": false,
+                "required": true,
+                "representation": [
+                  {
+                    "lang": "fi",
+                    "value": "Nimi"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Namn"
+                  }
+                ]
+              }
+            },
+            "tehtavanimike": {
+              "type": "string",
+              "sosmeta": {
+                "name": [
+                  {
+                    "lang": "fi",
+                    "value": "Tehtävänimike"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Uppgiftsbeteckning"
+                  }
+                ],
+                "description": [
+                  {
+                    "lang": "fi",
+                    "value": "-"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "-"
+                  }
+                ],
+                "example": [
+                  {
+                    "lang": "fi",
+                    "value": "-"
+                  }
+                ],
+                "repeatable": false,
+                "required": false,
+                "representation": [
+                  {
+                    "lang": "fi",
+                    "value": "Teksti"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Text"
+                  }
+                ]
+              }
+            },
+            "organisaatio": {
+              "type": "object",
+              "additionalProperties": false,
+              "sosmeta": {
+                "name": [
+                  {
+                    "lang": "fi",
+                    "value": "Organisaatio"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Organisation"
+                  }
+                ],
+                "title": [
+                  {
+                    "lang": "fi",
+                    "value": "Palveluyksikkö"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "Serviceenhet"
+                  }
+                ],
+                "description": [
+                  {
+                    "lang": "fi",
+                    "value": "-"
+                  },
+                  {
+                    "lang": "sv",
+                    "value": "-"
+                  }
+                ],
+                "repeatable": false,
+                "required": false
+              },
+              "required": ["nimi"],
+              "properties": {
+                "nimi": {
+                  "type": "string",
+                  "minLength": 1,
+                  "sosmeta": {
+                    "name": [
+                      {
+                        "lang": "fi",
+                        "value": "Nimi"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Namn"
+                      }
+                    ],
+                    "description": [
+                      {
+                        "lang": "fi",
+                        "value": "-"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "-"
+                      }
+                    ],
+                    "example": [
+                      {
+                        "lang": "fi",
+                        "value": "-"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "-"
+                      }
+                    ],
+                    "repeatable": false,
+                    "required": true,
+                    "representation": [
+                      {
+                        "lang": "fi",
+                        "value": "Nimi"
+                      },
+                      {
+                        "lang": "sv",
+                        "value": "Namn"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "lisatieto": {
+          "type": "string",
+          "sosmeta": {
+            "name": [
+              {
+                "lang": "fi",
+                "value": "Lisätieto"
+              },
+              {
+                "lang": "sv",
+                "value": "Tilläggsuppgift"
+              }
+            ],
+            "repeatable": false,
+            "required": false,
+            "representation": [
+              {
+                "lang": "fi",
+                "value": "Teksti"
+              },
+              {
+                "lang": "sv",
+                "value": "Text"
+              }
+            ]
+          }
+        },
+        "liiteluettelo": {
+          "type": "string",
+          "sosmeta": {
+            "name": [
+              {
+                "lang": "fi",
+                "value": "Liiteluettelo"
+              },
+              {
+                "lang": "sv",
+                "value": "Liiteluettelo"
+              }
+            ],
+            "repeatable": false,
+            "required": false,
+            "representation": [
+              {
+                "lang": "fi",
+                "value": "Teksti"
+              },
+              {
+                "lang": "sv",
+                "value": "Text"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<json-schema-form
+  [schema]="schema"
+  [layout]="layout"
+  [options]="jsonFormOptions"
+  framework="no-framework"
+  (onSubmit)="onSubmit($event)"
+>
+</json-schema-form>
+
+<pre>{{ submittedFormData | json }}</pre>
